@@ -1,0 +1,16 @@
+<p>List of Packs</p>
+<ul>
+    <li *ngFor='let pack of packs'>
+		<app-pack [pack]="pack"></app-pack>
+		<div *ngFor='let character of pack.characters'>
+			<app-character [character]="character"></app-character>
+		</div> 
+	</li>
+</ul>
+<search-box (update)="searchTerm = $event">Character Abilities</search-box>
+<p>Searched packs</p>
+<ul>
+	<li *ngFor="let character of (packs | search: searchTerm)">
+		<td>{{character.name}}</td>
+	</li>	
+</ul>

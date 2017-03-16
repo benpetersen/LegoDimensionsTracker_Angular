@@ -1,0 +1,10 @@
+[
+	{
+		"packName" : "Back To The Future",
+		"packType" : "Level",
+		"characters" : [{
+			"name": "Marty McFly",
+			"abilities": ["Sonar Smash"]
+		}]
+	}
+]
