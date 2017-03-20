@@ -6,5 +6,25 @@
 			"name": "Marty McFly",
 			"abilities": ["Sonar Smash"]
 		}]
+	},{
+		"packName" : "Portal 2",
+		"packType" : "Level",
+		"characters" : [{
+			"name": "Chell",
+			"abilities": ["Acrobat", "Portal Gun", "Target"]
+		}]
+	},{
+		"packName" : "Starter Pack",
+		"packType" : "Story",
+		"characters" : [{
+			"name": "Batman",
+			"abilities": ["Boomerang", "Grapple", "Stealth"]
+		},{
+			"name": "Gandalf",
+			"abilities": ["Illumination", "Magic", "Magical Shield"]
+		},{
+			"name": "Wildstyle",
+			"abilities": ["Acrobat", "Master Build", "Relic Detector"]
+		}]
 	}
 ]

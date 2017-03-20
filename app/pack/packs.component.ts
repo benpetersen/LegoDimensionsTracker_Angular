@@ -14,7 +14,7 @@ import {SearchPipe} from './search-pipe';
 export class PacksComponent implements OnInit{
 	packs: any[];
 	searchTerm: string;
-	searchResults: any[];
+	searchResults = new Array();
 	
 	constructor(private _packsService: PackService) {}
 	

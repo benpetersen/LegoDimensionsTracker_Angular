@@ -14,6 +14,7 @@ var search_pipe_1 = require('./search-pipe');
 var PacksComponent = (function () {
     function PacksComponent(_packsService) {
         this._packsService = _packsService;
+        this.searchResults = new Array();
     }
     PacksComponent.prototype.ngOnInit = function () {
         var _this = this;

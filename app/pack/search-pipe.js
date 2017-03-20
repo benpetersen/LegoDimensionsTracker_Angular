@@ -12,9 +12,8 @@ var core_1 = require('@angular/core');
 var SearchPipe = (function () {
     function SearchPipe() {
     }
-    SearchPipe.prototype.transform = function (value, _a) {
-        var term = _a[0];
-        var items = [];
+    SearchPipe.prototype.transform = function (value, term) {
+        var items = new Array();
         if (!term) {
             return value;
         }
