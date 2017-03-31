@@ -6,9 +6,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class SearchPipe implements PipeTransform{
 	transform(data: any[], searchTerm: string){
 		var items = new Array();
-		if(!searchTerm){
-            items = data;
-       	}else{
+		if(searchTerm){
 			searchTerm = searchTerm.toLowerCase();
 			data.forEach(function(item: any){
 				item.characters.forEach(function(character: any){

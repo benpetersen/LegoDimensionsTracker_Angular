@@ -14,10 +14,7 @@ var SearchPipe = (function () {
     }
     SearchPipe.prototype.transform = function (data, searchTerm) {
         var items = new Array();
-        if (!searchTerm) {
-            items = data;
-        }
-        else {
+        if (searchTerm) {
             searchTerm = searchTerm.toLowerCase();
             data.forEach(function (item) {
                 item.characters.forEach(function (character) {

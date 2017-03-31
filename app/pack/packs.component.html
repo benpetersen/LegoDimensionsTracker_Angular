@@ -8,9 +8,9 @@
 	</li>
 </ul>
 <search-box (update)="searchTerm = $event">Character Abilities</search-box>
-<p>Searched packs</p>
+<p>Characters with {{searchTerm}} in abilities list </p>
 <ul>
 	<li *ngFor="let character of (packs | search: searchTerm)">
-		<td>{{character.name}}</td>
+		<span>{{character.name}}</span>
 	</li>	
 </ul>
