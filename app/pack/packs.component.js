@@ -10,23 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var pack_service_1 = require('./pack.service');
-var search_pipe_1 = require('./search-pipe');
 var PacksComponent = (function () {
     function PacksComponent(_packsService) {
         this._packsService = _packsService;
-        this.searchResults = new Array();
     }
     PacksComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Rx observable version with subscribe function to a pack array
         this._packsService.getPacks_RxObservable()
-            .subscribe(function (packs) { return _this.packs = packs; }, function (packs) { return _this.searchResults = packs; }, function (err) { console.log(err); });
+            .subscribe(
+        //it worked
+        function (packs) { return _this.packs = packs; }, function (packs) { return _this.searchResults = packs; });
     };
     ;
     PacksComponent = __decorate([
         core_1.Component({
             selector: 'app-packs',
-            pipes: [search_pipe_1.SearchPipe],
             templateUrl: 'app/pack/packs.component.html',
             providers: [pack_service_1.PackService]
         }), 

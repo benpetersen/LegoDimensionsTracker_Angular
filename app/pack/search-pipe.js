@@ -12,17 +12,17 @@ var core_1 = require('@angular/core');
 var SearchPipe = (function () {
     function SearchPipe() {
     }
-    SearchPipe.prototype.transform = function (value, term) {
+    SearchPipe.prototype.transform = function (data, searchTerm) {
         var items = new Array();
-        if (!term) {
-            return value;
+        if (!searchTerm) {
+            items = data;
         }
         else {
-            var _term = term.toLowerCase();
-            value.forEach(function (item) {
+            searchTerm = searchTerm.toLowerCase();
+            data.forEach(function (item) {
                 item.characters.forEach(function (character) {
                     character.abilities.forEach(function (ability) {
-                        if (ability.toLowerCase().indexOf(_term) !== -1) {
+                        if (ability.toLowerCase().indexOf(searchTerm) !== -1) {
                             items.push(character);
                         }
                     });

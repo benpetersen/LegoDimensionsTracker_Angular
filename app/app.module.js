@@ -16,15 +16,7 @@ var app_component_1 = require('./app.component');
 // import {CustomerComponent} from './pack/pack.component';
 // import {CustomersComponent} from './pack/packs.component';
 var index_1 = require('./pack/index');
-var directives = [
-    app_component_1.AppComponent,
-    index_1.PackComponent,
-    index_1.PacksComponent,
-    index_1.CharacterComponent,
-    index_1.SearchPipe,
-    index_1.SearchBox
-];
-var schemas = [];
+var schemas = [core_1.CUSTOM_ELEMENTS_SCHEMA];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +28,14 @@ var AppModule = (function () {
                 forms_1.ReactiveFormsModule,
                 http_1.HttpModule
             ],
-            declarations: directives,
+            declarations: [
+                app_component_1.AppComponent,
+                index_1.PackComponent,
+                index_1.PacksComponent,
+                index_1.CharacterComponent,
+                index_1.SearchPipe,
+                index_1.SearchBox
+            ],
             bootstrap: [app_component_1.AppComponent],
             schemas: schemas,
         }), 

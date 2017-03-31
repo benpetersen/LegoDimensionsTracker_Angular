@@ -9,16 +9,7 @@ import { AppComponent } from './app.component';
 
 import {PacksComponent, PackComponent, CharacterComponent, SearchPipe, SearchBox} from './pack/index';
 
-let directives: any[] = [
-  AppComponent,
-  PackComponent,
-  PacksComponent,
-  CharacterComponent,
-  SearchPipe,
-  SearchBox
-];
-
-let schemas: any[] = [];
+let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
 
 @NgModule({
   imports:      [ 
@@ -27,7 +18,14 @@ let schemas: any[] = [];
     ReactiveFormsModule,
     HttpModule
   ],
-  declarations: directives,
+  declarations: [
+    AppComponent,
+    PackComponent,
+    PacksComponent,
+    CharacterComponent,
+    SearchPipe,
+    SearchBox
+  ],
   bootstrap:  [ AppComponent ],
   schemas: schemas,
 })
