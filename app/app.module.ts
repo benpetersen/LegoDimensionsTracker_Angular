@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 // import {CustomerComponent} from './pack/pack.component';
 // import {CustomersComponent} from './pack/packs.component';
 
-import {PacksComponent, PackComponent, CharacterComponent, SearchPipe, SearchBox} from './pack/index';
+import {PacksComponent, PackComponent, SearchPipe} from './pack/index';
+import {CharacterComponent} from './character/index';
+import {SearchBox} from './common/index';
 
 let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
 
 @NgModule({
   imports:      [ 
-    BrowserModule, 
+    BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule

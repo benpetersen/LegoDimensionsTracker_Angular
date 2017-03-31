@@ -40,4 +40,4 @@ var SearchPipe = (function () {
     return SearchPipe;
 }());
 exports.SearchPipe = SearchPipe;
-//# sourceMappingURL=search-pipe.js.map
+//# sourceMappingURL=search.pipe.js.map

@@ -20,7 +20,7 @@ var CharacterComponent = (function () {
     CharacterComponent = __decorate([
         core_1.Component({
             selector: 'app-character',
-            templateUrl: 'app/pack/character.component.html'
+            templateUrl: 'app/character/character.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], CharacterComponent);

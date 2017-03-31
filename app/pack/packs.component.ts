@@ -1,8 +1,8 @@
 import { Component, Input, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 
-import {PackService} from './pack.service';
-import {SearchPipe} from './search-pipe';
+import {PackService} from './services/pack.service';
+import {SearchPipe} from './pipes/search.pipe';
 
 @Component({
 	selector: 'app-packs', //<app-packs>
