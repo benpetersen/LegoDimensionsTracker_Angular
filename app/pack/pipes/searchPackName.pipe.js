@@ -9,22 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var PackComponent = (function () {
-    function PackComponent() {
+var SearchPackNamePipe = (function () {
+    function SearchPackNamePipe() {
     }
-    PackComponent.prototype.ngOnInit = function () { };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], PackComponent.prototype, "pack", void 0);
-    PackComponent = __decorate([
-        core_1.Component({
-            selector: 'app-pack',
-            templateUrl: 'app/pack/pack.component.html'
+    SearchPackNamePipe.prototype.transform = function (data, searchTermPackName) {
+        var items = new Array();
+        if (searchTermPackName) {
+            searchTermPackName = searchTermPackName.toLowerCase();
+            data.forEach(function (pack) {
+                if (pack.packName.toLowerCase().indexOf(searchTermPackName) !== -1) {
+                    items.push(pack);
+                }
+            });
+        }
+        return items;
+    };
+    SearchPackNamePipe = __decorate([
+        core_1.Pipe({
+            name: "searchPackName"
         }), 
         __metadata('design:paramtypes', [])
-    ], PackComponent);
-    return PackComponent;
+    ], SearchPackNamePipe);
+    return SearchPackNamePipe;
 }());
-exports.PackComponent = PackComponent;
-//# sourceMappingURL=pack.component.js.map
+exports.SearchPackNamePipe = SearchPackNamePipe;
+//# sourceMappingURL=searchPackName.pipe.js.map

@@ -7,7 +7,5 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PackComponent implements OnInit{
 	@Input() pack: {packName: number, packType: string, characters: any[]};
 	
-	myColor = 'gray';
-	
 	ngOnInit(){ }
 }

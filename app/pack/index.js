@@ -7,4 +7,5 @@ __export(require('./services/pack.service'));
 __export(require('./pack.component'));
 __export(require('./packs.component'));
 __export(require('./pipes/search.pipe'));
+__export(require('./pipes/searchPackName.pipe'));
 //# sourceMappingURL=index.js.map

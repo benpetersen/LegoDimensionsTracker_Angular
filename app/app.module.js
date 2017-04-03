@@ -36,6 +36,7 @@ var AppModule = (function () {
                 index_1.PacksComponent,
                 index_2.CharacterComponent,
                 index_1.SearchPipe,
+                index_1.SearchPackNamePipe,
                 index_3.SearchBox
             ],
             bootstrap: [app_component_1.AppComponent],

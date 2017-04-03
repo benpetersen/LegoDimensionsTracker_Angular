@@ -13,16 +13,26 @@ var pack_service_1 = require('./services/pack.service');
 var PacksComponent = (function () {
     function PacksComponent(_packsService) {
         this._packsService = _packsService;
+        this.ownedPacks = new Array();
     }
     PacksComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Rx observable version with subscribe function to a pack array
         this._packsService.getPacks_RxObservable()
-            .subscribe(
-        //it worked
-        function (packs) { return _this.packs = packs; }, function (packs) { return _this.searchResults = packs; });
+            .subscribe(function (packs) { return _this.packs = packs; }, function (packs) { return _this.searchAbilitiesResults = packs; });
     };
     ;
+    PacksComponent.prototype.showCharacter = function (event, i, item) {
+        item.show = !item.show;
+        alert(item);
+    };
+    PacksComponent.prototype.addPack = function (pack) {
+        //implement .indexOf
+        this.ownedPacks.push(pack);
+    };
+    PacksComponent.prototype.removePack = function (pack) {
+        //implement remove pack
+    };
     PacksComponent = __decorate([
         core_1.Component({
             selector: 'app-packs',

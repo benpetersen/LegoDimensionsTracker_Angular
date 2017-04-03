@@ -1,30 +1,88 @@
 [
 	{
+		"packName" : "Exclusive",
+		"packType" : "Level",
+		"waveNumber": 0,
+		"characters" : [{
+			"name": "Green Arrow",
+			"abilities": ["Acrobat", "Grapple", "Pole Vault", "Target"],
+			"show": false
+		},{
+			"name": "Supergirl",
+			"abilities": ["Dig","Dive","Flying","Freeze Breath", "Grapple", "Invulnerability", "Lantern Constructs", "Lazer", "Super Strength", "X-Ray Vision"],
+			"show": false
+		}]
+	},
+	{
+		"packName" : "Starter Pack",
+		"packType" : "Story",
+		"waveNumber": 1,
+		"characters" : [{
+			"name": "Batman",
+			"abilities": ["Boomerang", "Grapple", "Stealth"],
+			"show": false
+		},{
+			"name": "Gandalf",
+			"abilities": ["Illumination", "Magic", "Magical Shield"],
+			"show": false
+		},{
+			"name": "Wildstyle",
+			"abilities": ["Acrobat", "Master Build", "Relic Detector"],
+			"show": false
+		}]
+	},
+	{
 		"packName" : "Back To The Future",
 		"packType" : "Level",
+		"waveNumber": 1,
 		"characters" : [{
 			"name": "Marty McFly",
-			"abilities": ["Sonar Smash"]
+			"abilities": ["Sonar Smash"],
+			"show": false
 		}]
 	},{
 		"packName" : "Portal 2",
 		"packType" : "Level",
+		"waveNumber": 1,
 		"characters" : [{
 			"name": "Chell",
-			"abilities": ["Acrobat", "Portal Gun", "Target"]
+			"abilities": ["Acrobat", "Portal Gun", "Target"],
+			"show": false
 		}]
 	},{
-		"packName" : "Starter Pack",
-		"packType" : "Story",
+		"packName" : "The Simpsons",
+		"packType" : "Fun",
+		"waveNumber": 1,
 		"characters" : [{
-			"name": "Batman",
-			"abilities": ["Boomerang", "Grapple", "Stealth"]
+			"name": "Homer Simpson",
+			"abilities": ["Big Transform", "Sonar Smash", "Super Strength"],
+			"show": false
+		}]
+	},{
+		"packName" : "Jurassic World",
+		"packType" : "Level",
+		"waveNumber": 1,
+		"characters" : [{
+			"name": "ACU",
+			"abilities": ["Electricity", "Illumination", "Super Strength"],
+			"show": false
 		},{
-			"name": "Gandalf",
-			"abilities": ["Illumination", "Magic", "Magical Shield"]
+			"name": "Owen Grady",
+			"abilities": ["Stealth", "Target", "Tracking", "Vine Cut"],
+			"show": false
+		}]
+	},{
+		"packName" : "Scooby Doo",
+		"packType" : "Level",
+		"waveNumber": 1,
+		"characters" : [{
+			"name": "Scooby-Doo",
+			"abilities": ["Dig", "Dive", "Glide","Stealth", "Tracking"],
+			"show": false
 		},{
-			"name": "Wildstyle",
-			"abilities": ["Acrobat", "Master Build", "Relic Detector"]
+			"name": "Shaggy",
+			"abilities": ["Glide", "Stealth", "Tracking"],
+			"show": false
 		}]
 	}
 ]

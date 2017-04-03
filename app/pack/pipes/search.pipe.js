@@ -12,14 +12,14 @@ var core_1 = require('@angular/core');
 var SearchPipe = (function () {
     function SearchPipe() {
     }
-    SearchPipe.prototype.transform = function (data, searchTerm) {
+    SearchPipe.prototype.transform = function (data, searchAbilityName) {
         var items = new Array();
-        if (searchTerm) {
-            searchTerm = searchTerm.toLowerCase();
+        if (searchAbilityName) {
+            searchAbilityName = searchAbilityName.toLowerCase();
             data.forEach(function (item) {
                 item.characters.forEach(function (character) {
                     character.abilities.forEach(function (ability) {
-                        if (ability.toLowerCase().indexOf(searchTerm) !== -1) {
+                        if (ability.toLowerCase().indexOf(searchAbilityName) !== -1) {
                             items.push(character);
                         }
                     });

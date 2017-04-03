@@ -1,16 +1,41 @@
-<p>List of Packs</p>
-<ul>
-    <li *ngFor='let pack of packs'>
+<p>Search for packs you own</p>
+<search-box (update)="searchTermPackName = $event">Owned Packs</search-box>
+<table>
+	<tr *ngFor="let pack of (packs | searchPackName: searchTermPackName)">
 		<app-pack [pack]="pack"></app-pack>
-		<div *ngFor='let character of pack.characters'>
+		<div *ngFor='let character of pack.characters' >
 			<app-character [character]="character"></app-character>
 		</div> 
-	</li>
-</ul>
-<search-box (update)="searchTerm = $event">Character Abilities</search-box>
-<p>Characters with {{searchTerm}} in abilities list </p>
-<ul>
-	<li *ngFor="let character of (packs | search: searchTerm)">
-		<span>{{character.name}}</span>
-	</li>	
-</ul>
+		<button (click)="addPack(pack)" >Add Pack to Owned list</button>
+	</tr>
+</table>
+
+<p>Characters you Own</p>
+<table>
+	<tr *ngFor="let pack of ownedPacks">
+		<app-pack [pack]="pack"></app-pack>
+		<div *ngFor='let character of pack.characters' >
+			<app-character [character]="character"></app-character>
+		</div> 
+		<button (click)="removePack(pack)" >Remove Pack from Owned list</button>
+	</tr>
+</table>
+
+<p>Search characters for {{searchAbilityName || "-blank-"}} abilities</p>
+<search-box (update)="searchAbilityName = $event">Character Abilities</search-box>
+<table>
+	<tr *ngFor="let character of (packs | search: searchAbilityName)">
+		<td>{{character.name}}</td>
+	</tr>
+</table>
+
+<br/>
+<p>List of packs, characters and abilities</p>
+<table>
+    <tr *ngFor='let pack of packs'>
+		<app-pack [pack]="pack"></app-pack>
+		<div *ngFor='let character of pack.characters' >
+			<app-character [character]="character"></app-character>
+		</div> 
+	</tr>
+</table>
