@@ -12,9 +12,8 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
+var cookies_service_1 = require('angular2-cookie/services/cookies.service');
 var app_component_1 = require('./app.component');
-// import {CustomerComponent} from './pack/pack.component';
-// import {CustomersComponent} from './pack/packs.component';
 var index_1 = require('./pack/index');
 var index_2 = require('./character/index');
 var index_3 = require('./common/index');
@@ -39,6 +38,7 @@ var AppModule = (function () {
                 index_1.SearchPackNamePipe,
                 index_3.SearchBox
             ],
+            providers: [cookies_service_1.CookieService],
             bootstrap: [app_component_1.AppComponent],
             schemas: schemas,
         }), 

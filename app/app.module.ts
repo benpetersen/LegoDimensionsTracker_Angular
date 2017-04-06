@@ -2,10 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpModule, Response } from '@angular/http';
-
+import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { AppComponent } from './app.component';
-// import {CustomerComponent} from './pack/pack.component';
-// import {CustomersComponent} from './pack/packs.component';
 
 import {PacksComponent, PackComponent, SearchPipe, SearchPackNamePipe} from './pack/index';
 import {CharacterComponent} from './character/index';
@@ -29,6 +27,7 @@ let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
     SearchPackNamePipe,
     SearchBox
   ],
+  providers: [ CookieService ],
   bootstrap:  [ AppComponent ],
   schemas: schemas,
 })
