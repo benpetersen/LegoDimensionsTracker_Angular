@@ -21,6 +21,18 @@
 	</tr>
 </table>
 
+<p>Abilities you own</p>
+<table>
+	<tr *ngFor="let pack of abilitiesNotOwned">
+		<div *ngIf="pack.packNumber == ">
+			<app-pack [pack]="pack"></app-pack>
+			<div *ngFor='let character of pack.characters'>
+				<app-character [character]="character"></app-character>
+			</div> 
+		</div>
+	</tr>
+</table>
+
 <p>Search characters for {{searchAbilityName || "-blank-"}} abilities</p>
 <search-box (update)="searchAbilityName = $event">Character Abilities</search-box>
 <table>

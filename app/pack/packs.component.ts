@@ -15,6 +15,7 @@ import {SearchPackNamePipe} from './pipes/searchPackName.pipe';
 export class PacksComponent implements OnInit{
 	packs: any[];
 	ownedPacks = new Array();
+	abilitiesNeededForCompletion = new Array();
 	searchAbilityName: string;
 	searchTermPackName: string;
 	searchAbilitiesResults: any[];
@@ -49,7 +50,7 @@ export class PacksComponent implements OnInit{
 	}
 	addPack(pack){
 		//implement .indexOf
-		this.ownedPacks.push(pack);
+		
 		var cookie = this.getCookie("LegoDimentionsOwnedPacks");
 		var ownedPack = false;
 		
@@ -57,11 +58,15 @@ export class PacksComponent implements OnInit{
 			ownedPack = cookie.includes(pack.packNumber);
 			if(!ownedPack){
 				cookie += ", " + pack.packNumber;
+				this.ownedPacks.push(pack);
 			}
 		}else{
 			cookie = pack.packNumber;
+			this.ownedPacks.push(pack);
 		}
 		this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
+		
+		this.getOwnedAbilities();
 	}
 	removePack(pack){
 		//implement remove pack
@@ -69,5 +74,14 @@ export class PacksComponent implements OnInit{
 	}
 	getCookie(key: string){
 		return this._cookieService.get(key);
+	}
+	getNeededAbilitiesForCompletion(){
+		//complete list of needed abilities + combo abilities
+		for(var i = 0; i < ownedPacks.length; i++){
+			for(var j = 0; j < ownedPacks[i].characters.length; j++){
+				
+			}
+			this.abilitiesNeededForCompletion.append
+		}
 	}
 }

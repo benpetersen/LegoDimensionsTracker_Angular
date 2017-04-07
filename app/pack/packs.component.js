@@ -16,6 +16,7 @@ var PacksComponent = (function () {
         this._packsService = _packsService;
         this._cookieService = _cookieService;
         this.ownedPacks = new Array();
+        this.abilitiesNeededForCompletion = new Array();
     }
     PacksComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -43,25 +44,35 @@ var PacksComponent = (function () {
     };
     PacksComponent.prototype.addPack = function (pack) {
         //implement .indexOf
-        this.ownedPacks.push(pack);
         var cookie = this.getCookie("LegoDimentionsOwnedPacks");
         var ownedPack = false;
         if (cookie != undefined) {
             ownedPack = cookie.includes(pack.packNumber);
             if (!ownedPack) {
                 cookie += ", " + pack.packNumber;
+                this.ownedPacks.push(pack);
             }
         }
         else {
             cookie = pack.packNumber;
+            this.ownedPacks.push(pack);
         }
         this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
+        this.getOwnedAbilities();
     };
     PacksComponent.prototype.removePack = function (pack) {
         //implement remove pack
     };
     PacksComponent.prototype.getCookie = function (key) {
         return this._cookieService.get(key);
+    };
+    PacksComponent.prototype.getNeededAbilitiesForCompletion = function () {
+        //complete list of needed abilities + combo abilities
+        for (var i = 0; i < ownedPacks.length; i++) {
+            for (var j = 0; j < ownedPacks[i].characters.length; j++) {
+            }
+            this.abilitiesNeededForCompletion.append;
+        }
     };
     PacksComponent = __decorate([
         core_1.Component({
