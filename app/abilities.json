@@ -499,353 +499,337 @@
 		]
 	},{
 		"CharacterAbilityName": "Mind Control",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Wicked Witch",
+			"Wonder Woman",
+			"Cyberman",
+			"Voldemort",
+			"Marcelini",
+			"Queenie Goldstein"
+		]
 	},{
 		"CharacterAbilityName": "Mini Access",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Gimli",
+			"Gollum",
+			"Bart Simpson",
+			"Slimer",
+			"Jake",
+			"Lumpy Space Princess",
+			"Gizmo",
+			"E.T.",
+			"Marcelini",
+			"Mikey"
+		]
 	},{
 		"CharacterAbilityName": "Parseltongue Doors",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Harry Potter",
+			"Voldemort"
+		]
 	},{
 		"CharacterAbilityName": "P.K.E Meter",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Abby Yates"
+		]
 	},{
 		"CharacterAbilityName": "Pole Vault",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Green Arrow",
+			"Legolas",
+			"Sensei Wu",
+			"Robin"
+		]
 	},{
 		"CharacterAbilityName": "Portal Gun",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Chell"
+		]
 	},{
 		"CharacterAbilityName": "Rainbow Lego Objects",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Unikitty",
+			"Lumpy Space Princess"
+		]
 	},{
 		"CharacterAbilityName": "Relic Detector",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Wildstyle",
+			"Bad Cop"
+		]
 	},{
 		"CharacterAbilityName": "Rope Swings",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Jilian Holtzmann",
+			"Finn",
+			"Ethan Hunt",
+			"Jake",
+			"Gizmo",
+			"Lego Batman"
+		]
 	},{
 		"CharacterAbilityName": "Scan Disguise",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Ethan Hunt"
+		]
 	},{
 		"CharacterAbilityName": "Shapeshift",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Jake"
+		]
 	},{
 		"CharacterAbilityName": "Silver Lego Blowup",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Gollum",
+			"Wicked Witch",
+			"Cyberman",
+			"Erin Gilbert",
+			"Ethan Hunt",
+			"Harry Potter",
+			"Voldemort",
+			"B.A. Baracus",
+			"Hannibal Smith",
+			"Faceman Peck",
+			"Murdock",
+			"Newt Scamander",
+			"Jacob Kowalski",
+			"Gizmo",
+			"Tina Goldstein",
+			"Queenie Goldstein",
+			"Chase McCain",
+			"Hermione Granger"
+		]
 	},{
 		"CharacterAbilityName": "Slup Access",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Slimer",
+			"Jake",
+			"Lumpy Space Princess",
+			"Marcelini"
+		]
 	},{
 		"CharacterAbilityName": "Sonar Smash",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Marty McFly",
+			"Homer Simpson",
+			"Benny",
+			"Laval",
+			"The Doctor",
+			"Slimer",
+			"Jake",
+			"Marcelini"
+		]
 	},{
 		"CharacterAbilityName": "Speed",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Gamer Kid",
+			"Sonic"
+		]
 	},{
 		"CharacterAbilityName": "Spinjitzu",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Jay",
+			"Nya",
+			"Zane",
+			"Cole",
+			"Kai",
+			"Sensei Wu",
+			"Lloyd"
+		]
 	},{
 		"CharacterAbilityName": "Stealth",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Batman",
+			"Owen Grady",
+			"Scooby-Doo",
+			"Shaggy",
+			"Jay",
+			"Nya",
+			"Zane",
+			"Cole",
+			"Kai",
+			"Sensei Wu",
+			"Gamer Kid",
+			"Lloyd",
+			"Ethan Hunt",
+			"Harry Potter",
+			"Newt Scamander",
+			"E.T.",
+			"Marcelini",
+			"Tina Goldstein",
+			"Batgirl",
+			"Excalibur Batman",
+			"Lego Batman"
+		]
+	},{
+		"CharacterAbilityName": "Suit Rip",
+		"CharactersWithAbility": [
+			"Robin"
+		]
 	},{
 		"CharacterAbilityName": "Super Strength",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Supergirl",
+			"Homer Simpson",
+			"Cragger",
+			"Cyborg",
+			"Eris",
+			"Gimli",
+			"Laval",
+			"Cole",
+			"Harley Quinn",
+			"Gamer Kid",
+			"Stay Puft",
+			"Superman",
+			"Bane",
+			"Abby Yates",
+			"Patty Tolan",
+			"Jake",
+			"B.A. Baracus",
+			"Sonic",
+			"Marcelini",
+			"Excalibur Batman",
+			"Sloth"
+		]
 	},{
 		"CharacterAbilityName": "Super Strength Handles",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Cragger",
+			"Wonder Woman",
+			"Stay Puft",
+			"Superman",
+			"Bane",
+			"Abby Yates",
+			"Patty Tolan",
+			"Jake",
+			"B.A. Baracus"
+		]
 	},{
 		"CharacterAbilityName": "Suspend Ghosts",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Peter Venkman",
+			"Egon Spengler",
+			"Ray Stantz",
+			"Winston Zeddemore",
+			"Abby Yates",
+			"Erin Gilbert",
+			"Jilian Holtzmann",
+			"Patty Tolan"
+		]
 	},{
 		"CharacterAbilityName": "Sword Switch",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Finn",
+			"Excalibur Batman"
+		]
 	},{
 		"CharacterAbilityName": "TARDIS Access",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"The Doctor"
+		]
 	},{
 		"CharacterAbilityName": "Target",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Green Arrow",
+			"Chell",
+			"Owen Grady",
+			"Bad Cop",
+			"Benny",
+			"Cyborg",
+			"Eris",
+			"Legolas",
+			"Wicked Witch",
+			"Bart Simpson",
+			"The Joker",
+			"Finn",
+			"Ethan Hunt",
+			"Jake",
+			"Lumpy Space Princess",
+			"Harry Potter",
+			"Voldemort",
+			"B.A. Baracus",
+			"Hannibal Smith",
+			"Faceman Peck",
+			"Murdock",
+			"Newt Scamander",
+			"Jacob Kowalski",
+			"Gizmo",
+			"Strip",
+			"Tina Goldstein",
+			"Queenie Goldstein",
+			"Hermione Granger"
+		]
 	},{
 		"CharacterAbilityName": "Technology",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Benny",
+			"Cyborg",
+			"The Doctor",
+			"Cyberman",
+			"Doc Brown",
+			"Erin Gilbert",
+			"Jilian Holtzmann",
+			"Patty Tolan",
+			"Ethan Hunt",
+			"Michael Knight"
+		]
 	},{
 		"CharacterAbilityName": "Tracking",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Owen Grady",
+			"Scooby-Doo",
+			"Shaggy",
+			"Jake",
+			"Marcelini",
+			"Michael Knight",
+			"Chase McCain"
+		]
+	},{
+		"CharacterAbilityName": "Uniform Changing",
+		"CharactersWithAbility": [
+			"Chase McCain"
+		]
+	},{
+		"CharacterAbilityName": "Vent Access",
+		"CharactersWithAbility": [
+			"Robin"
+		]
 	},{
 		"CharacterAbilityName": "Vine Cut",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Owen Grady",
+			"Finn",
+			"Gizmo",
+			"Strip",
+			"Marcelini"
+		]
 	},{
 		"CharacterAbilityName": "Water Spray",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Krusty",
+			"Aquaman",
+			"Harry Potter",
+			"Voldemort",
+			"Newt Scamander",
+			"Tina Goldstein",
+			"Queenie Goldstein",
+			"Chase McCain",
+			"Hermione Granger"
+		]
 	},{
 		"CharacterAbilityName": "Weapon Switch",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Finn"
+		]
 	},{
 		"CharacterAbilityName": "X-Ray Vision",
-		"CharactersWithAbility": []
+		"CharactersWithAbility": [
+			"Supergirl",
+			"Zane",
+			"Cyberman",
+			"Superman",
+			"Ethan Hunt",
+			"Michael Knight"
+		]
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ]
