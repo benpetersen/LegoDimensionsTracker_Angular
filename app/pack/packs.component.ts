@@ -3,24 +3,26 @@ import { Observable } from 'rxjs/Rx';
 import { CookieService } from 'angular2-cookie/core';
 
 import {PackService} from './services/pack.service';
+import {AbilityService} from './services/ability.service';
 import {SearchPipe} from './pipes/search.pipe';
 import {SearchPackNamePipe} from './pipes/searchPackName.pipe';
 
 @Component({
 	selector: 'app-packs', //<app-packs>
 	templateUrl: 'app/pack/packs.component.html',
-	providers: [PackService]
+	providers: [PackService, AbilityService]
 })
 
 export class PacksComponent implements OnInit{
 	packs: any[];
+	abilities: any[];
 	ownedPacks = new Array();
-	abilitiesNeededForCompletion = new Array();
+	neededAbilities = new Array();
 	searchAbilityName: string;
 	searchTermPackName: string;
 	searchAbilitiesResults: any[];
 	
-	constructor(private _packsService: PackService, private _cookieService: CookieService) {}
+	constructor(private _packsService: PackService, private _abilitiesService: AbilityService, private _cookieService: CookieService) {}
 	
 	ngOnInit(){
 		//Rx observable version with subscribe function to a pack array
@@ -28,7 +30,11 @@ export class PacksComponent implements OnInit{
 			.subscribe(
 				(packs) => this.packs = packs,
 				(packs) => this.searchAbilitiesResults = packs,
-				(packs) => this.getOwnedPacks();
+				(packs) => this.getOwnedPacks()
+			)
+		this._abilitiesService.getAbilities_RxObservable()
+			.subscribe(
+				(abilities) => this.abilities = abilities
 			)
 	};
 	getOwnedPacks(){
@@ -66,7 +72,7 @@ export class PacksComponent implements OnInit{
 		}
 		this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
 		
-		this.getOwnedAbilities();
+		this.getAbilitiesNeededForCompletion();
 	}
 	removePack(pack){
 		//implement remove pack
@@ -75,13 +81,25 @@ export class PacksComponent implements OnInit{
 	getCookie(key: string){
 		return this._cookieService.get(key);
 	}
-	getNeededAbilitiesForCompletion(){
-		//complete list of needed abilities + combo abilities
-		for(var i = 0; i < ownedPacks.length; i++){
-			for(var j = 0; j < ownedPacks[i].characters.length; j++){
+	getAbilitiesNeededForCompletion(){
+		/*Go through each ability
+		If not owned, add to neededAbilities
+		Use this to show list of characters need to buy
+		*/
+		if(this.abilities.length > 0){
+			for(var i = 0; i< this.abilities.length; i++){
+				for(var j = 0; j < this.abilities[i].CharactersWithAbility.length; j++){
+					//Characters that have current ability
+					//Do you own this character? If not, and at end of list, add to needed abilities 
+					for(var k = 0; k < this.ownedPacks.length; k++){
+						for(var l = 0; l < this.ownedPacks[k].characters.length; l++){
+							//if(this.abilities[i].)
+						}
+					//this.neededAbilities.append();
+				}
+				}
 				
 			}
-			this.abilitiesNeededForCompletion.append
 		}
 	}
 }

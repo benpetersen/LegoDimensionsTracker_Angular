@@ -1,7 +1,9 @@
 [
 	{
 		"CharacterAbilityName": "A-Team Master Build",
-		"CharactersWithAbility": ["B.A. Baracus"]
+		"CharactersWithAbility": [
+			"B.A. Baracus"
+		]
 	},
 	{
 		"CharacterAbilityName": "Acrobat",
@@ -97,7 +99,9 @@
 		]
 	},{
 		"CharacterAbilityName": "Charge Transfer",
-		"CharactersWithAbility": ["Abby Yates"]
+		"CharactersWithAbility": [
+			"Abby Yates"
+		]
 	},{
 		"CharacterAbilityName": "Chi",
 		"CharactersWithAbility": [
