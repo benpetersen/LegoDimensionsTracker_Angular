@@ -8,23 +8,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
 var CharacterComponent = (function () {
     function CharacterComponent() {
     }
     CharacterComponent.prototype.ngOnInit = function () { };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], CharacterComponent.prototype, "character", void 0);
-    CharacterComponent = __decorate([
-        core_1.Component({
-            selector: 'app-character',
-            templateUrl: 'app/character/character.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], CharacterComponent);
     return CharacterComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], CharacterComponent.prototype, "character", void 0);
+CharacterComponent = __decorate([
+    core_1.Component({
+        selector: 'app-character',
+        templateUrl: 'app/character/character.component.html'
+    })
+], CharacterComponent);
 exports.CharacterComponent = CharacterComponent;
 //# sourceMappingURL=character.component.js.map

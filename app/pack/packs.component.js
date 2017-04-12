@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var core_2 = require('angular2-cookie/core');
-var pack_service_1 = require('./services/pack.service');
-var ability_service_1 = require('./services/ability.service');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var core_2 = require("angular2-cookie/core");
+var pack_service_1 = require("./services/pack.service");
+var ability_service_1 = require("./services/ability.service");
 var PacksComponent = (function () {
     function PacksComponent(_packsService, _abilitiesService, _cookieService) {
         this._packsService = _packsService;
@@ -132,15 +133,15 @@ var PacksComponent = (function () {
             }
         }
     };
-    PacksComponent = __decorate([
-        core_1.Component({
-            selector: 'app-packs',
-            templateUrl: 'app/pack/packs.component.html',
-            providers: [pack_service_1.PackService, ability_service_1.AbilityService]
-        }), 
-        __metadata('design:paramtypes', [pack_service_1.PackService, ability_service_1.AbilityService, core_2.CookieService])
-    ], PacksComponent);
     return PacksComponent;
 }());
+PacksComponent = __decorate([
+    core_1.Component({
+        selector: 'app-packs',
+        templateUrl: 'app/pack/packs.component.html',
+        providers: [pack_service_1.PackService, ability_service_1.AbilityService]
+    }),
+    __metadata("design:paramtypes", [pack_service_1.PackService, ability_service_1.AbilityService, core_2.CookieService])
+], PacksComponent);
 exports.PacksComponent = PacksComponent;
 //# sourceMappingURL=packs.component.js.map

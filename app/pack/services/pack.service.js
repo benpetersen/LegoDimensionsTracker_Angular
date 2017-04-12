@@ -11,9 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var Rx_1 = require('rxjs/Rx');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Rx_1 = require("rxjs/Rx");
 var URL_PACKS = 'app/packs.json';
 var PackService = (function () {
     function PackService(_http) {
@@ -28,12 +29,12 @@ var PackService = (function () {
         console.log(err);
         return Rx_1.Observable.throw(err);
     };
-    PackService = __decorate([
-        core_1.Injectable(),
-        __param(0, core_1.Inject(http_1.Http)), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], PackService);
     return PackService;
 }());
+PackService = __decorate([
+    core_1.Injectable(),
+    __param(0, core_1.Inject(http_1.Http)),
+    __metadata("design:paramtypes", [http_1.Http])
+], PackService);
 exports.PackService = PackService;
 //# sourceMappingURL=pack.service.js.map

@@ -2,11 +2,12 @@
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+Object.defineProperty(exports, "__esModule", { value: true });
 //a barrel of pack related "things"
-__export(require('./services/pack.service'));
-__export(require('./services/ability.service'));
-__export(require('./pack.component'));
-__export(require('./packs.component'));
-__export(require('./pipes/search.pipe'));
-__export(require('./pipes/searchPackName.pipe'));
+__export(require("./services/pack.service"));
+__export(require("./services/ability.service"));
+__export(require("./pack.component"));
+__export(require("./packs.component"));
+__export(require("./pipes/search.pipe"));
+__export(require("./pipes/searchPackName.pipe"));
 //# sourceMappingURL=index.js.map

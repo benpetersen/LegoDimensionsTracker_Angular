@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var SearchBox = (function () {
     function SearchBox() {
@@ -16,18 +17,17 @@ var SearchBox = (function () {
     SearchBox.prototype.ngOnInit = function () {
         this.update.emit('');
     };
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], SearchBox.prototype, "update", void 0);
-    SearchBox = __decorate([
-        core_1.Component({
-            selector: 'search-box',
-            template: '<div><input #input type="text" (input)="update.emit(input.value)"></div>'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], SearchBox);
     return SearchBox;
 }());
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], SearchBox.prototype, "update", void 0);
+SearchBox = __decorate([
+    core_1.Component({
+        selector: 'search-box',
+        template: '<div><input #input type="text" (input)="update.emit(input.value)"></div>'
+    })
+], SearchBox);
 exports.SearchBox = SearchBox;
 //# sourceMappingURL=search-box.js.map
