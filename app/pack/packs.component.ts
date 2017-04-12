@@ -28,13 +28,18 @@ export class PacksComponent implements OnInit{
 		//Rx observable version with subscribe function to a pack array
 		this._packsService.getPacks_RxObservable()
 			.subscribe(
-				(packs) => this.packs = packs,
-				(packs) => this.searchAbilitiesResults = packs,
-				(packs) => this.getOwnedPacks()
+				(packs) => {
+					this.packs = packs,
+					this.searchAbilitiesResults = packs,
+					this.getOwnedPacks()
+				}
 			)
 		this._abilitiesService.getAbilities_RxObservable()
 			.subscribe(
-				(abilities) => this.abilities = abilities
+				(abilities) => {
+					 this.abilities = abilities,
+					 this.getAbilitiesNeededForCompletion(this.abilities)
+				}
 			)
 	};
 	getOwnedPacks(){
@@ -72,33 +77,54 @@ export class PacksComponent implements OnInit{
 		}
 		this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
 		
-		this.getAbilitiesNeededForCompletion();
+		this.getAbilitiesNeededForCompletion(this.abilities);
 	}
 	removePack(pack){
 		//implement remove pack
-		
 	}
 	getCookie(key: string){
 		return this._cookieService.get(key);
 	}
-	getAbilitiesNeededForCompletion(){
-		/*Go through each ability
-		If not owned, add to neededAbilities
-		Use this to show list of characters need to buy
+	getAbilitiesNeededForCompletion(abilities){
+		/*
+		Check if ability is owned by iterating through ownedPacks characters
+		Comparing the list of characters with the ability to ownedPacks character names
+		--Brute force, it's probably the worst way to do this, but it works
 		*/
-		if(this.abilities.length > 0){
-			for(var i = 0; i< this.abilities.length; i++){
-				for(var j = 0; j < this.abilities[i].CharactersWithAbility.length; j++){
-					//Characters that have current ability
-					//Do you own this character? If not, and at end of list, add to needed abilities 
-					for(var k = 0; k < this.ownedPacks.length; k++){
-						for(var l = 0; l < this.ownedPacks[k].characters.length; l++){
-							//if(this.abilities[i].)
-						}
-					//this.neededAbilities.append();
-				}
-				}
+		
+		this.neededAbilities = new Array();
+		
+		for(var i = 0; i < this.abilities.length; i++){
+			var ability = this.abilities[i];
+			var owned = false;
+			
+			if(this.neededAbilities.indexOf(ability) != -1){
+				//ability already in neededAbilities
+				break;
+			}
+			//Messy way to iterate through characters, checking if character is owned
+			for(var j = 0; j < this.abilities[i].CharactersWithAbility.length; j++){
+				var characterWithAbility = this.abilities[i].CharactersWithAbility[j];
 				
+				
+				//Do you own this character? If not, add to needed abilities 
+				for(var k = 0; k < this.ownedPacks.length; k++){
+					for(var l = 0; l < this.ownedPacks[k].characters.length; l++){
+						var ownedCharacter = this.ownedPacks[k].characters[l].name;
+						if(ownedCharacter == characterWithAbility){
+							owned = true;
+							break;
+						}
+					}
+					if(owned == true){
+						//character is owned, exit out of outer loop
+						break;
+					}
+				}
+			}
+			//If not owned, add to neededAbilities
+			if(owned == false){
+				this.neededAbilities.push(ability);
 			}
 		}
 	}

@@ -14,26 +14,26 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 var Rx_1 = require('rxjs/Rx');
-var URL_PACKS = 'app/packs.json';
-var PackService = (function () {
-    function PackService(_http) {
+var URL_ABILITIES = 'app/abilities.json';
+var AbilityService = (function () {
+    function AbilityService(_http) {
         this._http = _http;
     }
-    PackService.prototype.getPacks_RxObservable = function () {
-        return this._http.get(URL_PACKS)
+    AbilityService.prototype.getAbilities_RxObservable = function () {
+        return this._http.get(URL_ABILITIES)
             .map(function (response) { return response.json(); })
             .catch(this._handleError);
     };
-    PackService.prototype._handleError = function (err) {
+    AbilityService.prototype._handleError = function (err) {
         console.log(err);
         return Rx_1.Observable.throw(err);
     };
-    PackService = __decorate([
+    AbilityService = __decorate([
         core_1.Injectable(),
         __param(0, core_1.Inject(http_1.Http)), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], PackService);
-    return PackService;
+    ], AbilityService);
+    return AbilityService;
 }());
-exports.PackService = PackService;
-//# sourceMappingURL=pack.service.js.map
+exports.AbilityService = AbilityService;
+//# sourceMappingURL=ability.service.js.map

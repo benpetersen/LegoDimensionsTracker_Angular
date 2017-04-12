@@ -11,18 +11,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var core_2 = require('angular2-cookie/core');
 var pack_service_1 = require('./services/pack.service');
+var ability_service_1 = require('./services/ability.service');
 var PacksComponent = (function () {
-    function PacksComponent(_packsService, _cookieService) {
+    function PacksComponent(_packsService, _abilitiesService, _cookieService) {
         this._packsService = _packsService;
+        this._abilitiesService = _abilitiesService;
         this._cookieService = _cookieService;
         this.ownedPacks = new Array();
-        this.abilitiesNeededForCompletion = new Array();
+        this.neededAbilities = new Array();
     }
     PacksComponent.prototype.ngOnInit = function () {
         var _this = this;
         //Rx observable version with subscribe function to a pack array
         this._packsService.getPacks_RxObservable()
-            .subscribe(function (packs) { return _this.packs = packs; }, function (packs) { return _this.searchAbilitiesResults = packs; }, function (packs) { return _this.getOwnedPacks(); });
+            .subscribe(function (packs) {
+            _this.packs = packs,
+                _this.searchAbilitiesResults = packs,
+                _this.getOwnedPacks();
+        });
+        this._abilitiesService.getAbilities_RxObservable()
+            .subscribe(function (abilities) {
+            _this.abilities = abilities,
+                _this.getAbilitiesNeededForCompletion(_this.abilities);
+        });
     };
     ;
     PacksComponent.prototype.getOwnedPacks = function () {
@@ -58,7 +69,7 @@ var PacksComponent = (function () {
             this.ownedPacks.push(pack);
         }
         this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
-        this.getOwnedAbilities();
+        this.getAbilitiesNeededForCompletion(this.abilities);
     };
     PacksComponent.prototype.removePack = function (pack) {
         //implement remove pack
@@ -66,21 +77,51 @@ var PacksComponent = (function () {
     PacksComponent.prototype.getCookie = function (key) {
         return this._cookieService.get(key);
     };
-    PacksComponent.prototype.getNeededAbilitiesForCompletion = function () {
-        //complete list of needed abilities + combo abilities
-        for (var i = 0; i < ownedPacks.length; i++) {
-            for (var j = 0; j < ownedPacks[i].characters.length; j++) {
+    PacksComponent.prototype.getAbilitiesNeededForCompletion = function (abilities) {
+        /*
+        Check if ability is owned by iterating through ownedPacks characters
+        Comparing the list of characters with the ability to ownedPacks character names
+        --Brute force, it's probably the worst way to do this, but it works
+        */
+        this.neededAbilities = new Array();
+        for (var i = 0; i < this.abilities.length; i++) {
+            var ability = this.abilities[i];
+            var owned = false;
+            if (this.neededAbilities.indexOf(ability) != -1) {
+                //ability already in neededAbilities
+                break;
             }
-            this.abilitiesNeededForCompletion.append;
+            //Messy way to iterate through characters, checking if character is owned
+            for (var j = 0; j < this.abilities[i].CharactersWithAbility.length; j++) {
+                var characterWithAbility = this.abilities[i].CharactersWithAbility[j];
+                //Do you own this character? If not, add to needed abilities 
+                for (var k = 0; k < this.ownedPacks.length; k++) {
+                    for (var l = 0; l < this.ownedPacks[k].characters.length; l++) {
+                        var ownedCharacter = this.ownedPacks[k].characters[l].name;
+                        if (ownedCharacter == characterWithAbility) {
+                            owned = true;
+                            break;
+                        }
+                    }
+                    if (owned == true) {
+                        //character is owned, exit out of outer loop
+                        break;
+                    }
+                }
+            }
+            //If not owned, add to neededAbilities
+            if (owned == false) {
+                this.neededAbilities.push(ability);
+            }
         }
     };
     PacksComponent = __decorate([
         core_1.Component({
             selector: 'app-packs',
             templateUrl: 'app/pack/packs.component.html',
-            providers: [pack_service_1.PackService]
+            providers: [pack_service_1.PackService, ability_service_1.AbilityService]
         }), 
-        __metadata('design:paramtypes', [pack_service_1.PackService, core_2.CookieService])
+        __metadata('design:paramtypes', [pack_service_1.PackService, ability_service_1.AbilityService, core_2.CookieService])
     ], PacksComponent);
     return PacksComponent;
 }());

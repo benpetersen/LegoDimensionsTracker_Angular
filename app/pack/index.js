@@ -4,6 +4,7 @@ function __export(m) {
 }
 //a barrel of pack related "things"
 __export(require('./services/pack.service'));
+__export(require('./services/ability.service'));
 __export(require('./pack.component'));
 __export(require('./packs.component'));
 __export(require('./pipes/search.pipe'));
