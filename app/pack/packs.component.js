@@ -32,7 +32,7 @@ var PacksComponent = (function () {
         this._abilitiesService.getAbilities_RxObservable()
             .subscribe(function (abilities) {
             _this.abilities = abilities,
-                _this.getAbilitiesNeededForCompletion(_this.abilities);
+                _this.getAbilitiesNeededForCompletion();
         });
     };
     ;
@@ -69,15 +69,32 @@ var PacksComponent = (function () {
             this.ownedPacks.push(pack);
         }
         this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
-        this.getAbilitiesNeededForCompletion(this.abilities);
+        this.searchTermPackName = "";
+        this.getAbilitiesNeededForCompletion();
     };
-    PacksComponent.prototype.removePack = function (pack) {
-        //implement remove pack
+    PacksComponent.prototype.removePack = function (removePack) {
+        this.ownedPacks = this.ownedPacks.filter(function (item) {
+            return item.packName !== removePack.packName;
+        });
+        this.savePacks();
+        this.getAbilitiesNeededForCompletion();
     };
     PacksComponent.prototype.getCookie = function (key) {
         return this._cookieService.get(key);
     };
-    PacksComponent.prototype.getAbilitiesNeededForCompletion = function (abilities) {
+    PacksComponent.prototype.savePacks = function () {
+        var cookie = "";
+        this.ownedPacks.forEach(function (pack) {
+            if (cookie != undefined) {
+                cookie += ", " + pack.packNumber;
+            }
+            else {
+                cookie = pack.packNumber;
+            }
+        });
+        this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
+    };
+    PacksComponent.prototype.getAbilitiesNeededForCompletion = function () {
         /*
         Check if ability is owned by iterating through ownedPacks characters
         Comparing the list of characters with the ability to ownedPacks character names

@@ -38,7 +38,7 @@ export class PacksComponent implements OnInit{
 			.subscribe(
 				(abilities) => {
 					 this.abilities = abilities,
-					 this.getAbilitiesNeededForCompletion(this.abilities)
+					 this.getAbilitiesNeededForCompletion()
 				}
 			)
 	};
@@ -76,16 +76,31 @@ export class PacksComponent implements OnInit{
 			this.ownedPacks.push(pack);
 		}
 		this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
-		
-		this.getAbilitiesNeededForCompletion(this.abilities);
+		this.searchTermPackName = "";
+		this.getAbilitiesNeededForCompletion();
 	}
-	removePack(pack){
-		//implement remove pack
+	removePack(removePack){
+		this.ownedPacks = this.ownedPacks.filter(function(item){
+			return item.packName !== removePack.packName;	
+		})
+		this.savePacks();
+		this.getAbilitiesNeededForCompletion();
 	}
 	getCookie(key: string){
 		return this._cookieService.get(key);
 	}
-	getAbilitiesNeededForCompletion(abilities){
+	savePacks(){
+		var cookie = "";
+		this.ownedPacks.forEach(function(pack){
+			if(cookie != undefined){
+				cookie += ", " + pack.packNumber;
+			}else{
+				cookie = pack.packNumber;
+			}
+		})
+		this._cookieService.put("LegoDimentionsOwnedPacks", cookie);
+	}
+	getAbilitiesNeededForCompletion(){
 		/*
 		Check if ability is owned by iterating through ownedPacks characters
 		Comparing the list of characters with the ability to ownedPacks character names
