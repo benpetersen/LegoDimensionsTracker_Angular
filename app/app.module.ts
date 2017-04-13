@@ -2,6 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpModule, Response } from '@angular/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,8 @@ let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    NgbModule.forRoot()
   ],
   declarations: [
     AppComponent,

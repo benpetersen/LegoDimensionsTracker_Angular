@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var app_component_1 = require("./app.component");
 var index_1 = require("./pack/index");
@@ -27,7 +28,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
-            http_1.HttpModule
+            http_1.HttpModule,
+            ng_bootstrap_1.NgbModule.forRoot()
         ],
         declarations: [
             app_component_1.AppComponent,
