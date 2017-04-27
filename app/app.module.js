@@ -19,9 +19,7 @@ var index_2 = require("./abilitySearch/index");
 var not_found_component_1 = require("./not-found.component");
 var index_3 = require("./character/index");
 var index_4 = require("./common/index");
-var search_pipe_1 = require("./pipes/search.pipe");
-var searchPackName_pipe_1 = require("./pipes/searchPackName.pipe");
-var searchAbilityName_pipe_1 = require("./pipes/searchAbilityName.pipe");
+var index_5 = require("./pipes/index");
 var schemas = [core_1.CUSTOM_ELEMENTS_SCHEMA];
 var appRoutes = [
     { path: 'ability-search', component: index_2.AbilitySearchComponent },
@@ -52,9 +50,9 @@ AppModule = __decorate([
             index_2.AbilitySearchComponent,
             not_found_component_1.PageNotFoundComponent,
             index_4.SearchBox,
-            search_pipe_1.SearchPipe,
-            searchPackName_pipe_1.SearchPackNamePipe,
-            searchAbilityName_pipe_1.SearchAbilityNamePipe
+            index_5.SearchPipe,
+            index_5.SearchPackNamePipe,
+            index_5.SearchAbilityNamePipe
         ],
         providers: [cookies_service_1.CookieService],
         bootstrap: [app_component_1.AppComponent],

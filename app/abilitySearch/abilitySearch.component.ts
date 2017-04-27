@@ -3,9 +3,7 @@ import { Observable } from 'rxjs/Rx';
 
 import {PackService} from '../services/pack.service';
 import {AbilityService} from '../services/ability.service';
-import {SearchPipe} from '../pipes/search.pipe';
-import {SearchPackNamePipe} from '../pipes/searchPackName.pipe';
-import {SearchAbilityNamePipe} from '../pipes/searchAbilityName.pipe';
+import {SearchPipe, SearchPackNamePipe, SearchAbilityNamePipe} from '../pipes/index';
 
 @Component({
 	selector: 'abilitySearch-app', //<app-packs>

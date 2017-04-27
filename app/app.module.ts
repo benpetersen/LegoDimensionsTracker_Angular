@@ -13,9 +13,7 @@ import {AbilitySearchComponent} from './abilitySearch/index';
 import {PageNotFoundComponent} from './not-found.component';
 import {CharacterComponent} from './character/index';
 import {SearchBox} from './common/index';
-import {SearchPipe} from './pipes/search.pipe';
-import {SearchPackNamePipe} from './pipes/searchPackName.pipe';
-import {SearchAbilityNamePipe} from './pipes/searchAbilityName.pipe';
+import {SearchPipe, SearchPackNamePipe, SearchAbilityNamePipe} from './pipes/index';
 
 let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
 
