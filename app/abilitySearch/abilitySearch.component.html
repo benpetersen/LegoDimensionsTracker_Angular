@@ -1,16 +1,18 @@
 <p>Search for {{searchTermAbilityName || "-blank-"}} abilities</p>
 <search-box (update)="searchTermAbilityName = $event">Character Abilities</search-box>
-<table>
-	<tr *ngFor="let CharactersWithAbility of (abilities | searchAbilityName: searchTermAbilityName)">
-		<td>{{CharactersWithAbility.name}}</td>
-	</tr>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Ability</td>
+			<td>Characters with ability</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let ability of (abilities | searchAbilityName: searchTermAbilityName)">
+				<td>{{ability.CharacterAbilityName}}</td>
+				<td>{{ability.CharactersWithAbility}}</td>
+		</tr>
+	</tbody>
 </table>
 
-<p>Search characters for {{searchTermAbilityName || "-blank-"}} abilities</p>
-<search-box (update)="searchTermAbilityName = $event">Characters with Ability</search-box>
-<table>
-	<tr *ngFor="let character of (packs | search: searchTermAbilityName)">
-		<td>{{character.name}}</td>
-	</tr>
-</table>
 

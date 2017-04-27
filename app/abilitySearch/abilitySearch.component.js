@@ -10,21 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var pack_service_1 = require("../services/pack.service");
 var ability_service_1 = require("../services/ability.service");
 var AbilitySearchComponent = (function () {
-    function AbilitySearchComponent(_packsService, _abilitiesService) {
-        this._packsService = _packsService;
+    function AbilitySearchComponent(_abilitiesService) {
         this._abilitiesService = _abilitiesService;
     }
     AbilitySearchComponent.prototype.ngOnInit = function () {
         var _this = this;
-        //Rx observable version with subscribe function to a pack array
-        this._packsService.getPacks_RxObservable()
-            .subscribe(function (packs) {
-            _this.packs = packs,
-                _this.searchAbilitiesResults = packs;
-        });
+        //Rx observable with subscribe function to a abilities array
         this._abilitiesService.getAbilities_RxObservable()
             .subscribe(function (abilities) {
             _this.abilities = abilities;
@@ -37,9 +30,9 @@ AbilitySearchComponent = __decorate([
     core_1.Component({
         selector: 'abilitySearch-app',
         templateUrl: 'app/abilitySearch/abilitySearch.component.html',
-        providers: [pack_service_1.PackService, ability_service_1.AbilityService]
+        providers: [ability_service_1.AbilityService]
     }),
-    __metadata("design:paramtypes", [pack_service_1.PackService, ability_service_1.AbilityService])
+    __metadata("design:paramtypes", [ability_service_1.AbilityService])
 ], AbilitySearchComponent);
 exports.AbilitySearchComponent = AbilitySearchComponent;
 //# sourceMappingURL=abilitySearch.component.js.map
