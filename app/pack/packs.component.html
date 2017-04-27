@@ -33,12 +33,3 @@
 
 
 <br/>
-<p>List of packs, characters and abilities</p>
-<table>
-    <tr *ngFor='let pack of packs'>
-		<app-pack [pack]="pack"></app-pack>
-		<div *ngFor='let character of pack.characters' >
-			<app-character [character]="character"></app-character>
-		</div> 
-	</tr>
-</table>

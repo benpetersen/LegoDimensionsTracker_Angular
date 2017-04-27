@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import {PacksComponent, PackComponent} from './pack/index';
+import {AllPacksComponent} from './allPacks/index';
 import {AbilityService, PackService} from './services/index';
 import {AbilitySearchComponent} from './abilitySearch/index';
 import {PageNotFoundComponent} from './not-found.component';
@@ -19,6 +20,7 @@ let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
 
 const appRoutes: Routes = [
   { path: 'ability-search', component: AbilitySearchComponent },
+  { path: 'all-packs', component: AllPacksComponent, data: { title: 'Pack List' }},
   { path: 'packs', component: PacksComponent, data: { title: 'Pack List' }},
   { path: '', redirectTo: '/packs', pathMatch: 'full'},
   { path: '**', component: PageNotFoundComponent }
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     AppComponent,
     PackComponent,
     PacksComponent,
+    AllPacksComponent,
     CharacterComponent,
     AbilitySearchComponent,
     PageNotFoundComponent,

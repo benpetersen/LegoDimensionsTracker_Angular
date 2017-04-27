@@ -15,14 +15,16 @@ var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
 var index_1 = require("./pack/index");
-var index_2 = require("./abilitySearch/index");
+var index_2 = require("./allPacks/index");
+var index_3 = require("./abilitySearch/index");
 var not_found_component_1 = require("./not-found.component");
-var index_3 = require("./character/index");
-var index_4 = require("./common/index");
-var index_5 = require("./pipes/index");
+var index_4 = require("./character/index");
+var index_5 = require("./common/index");
+var index_6 = require("./pipes/index");
 var schemas = [core_1.CUSTOM_ELEMENTS_SCHEMA];
 var appRoutes = [
-    { path: 'ability-search', component: index_2.AbilitySearchComponent },
+    { path: 'ability-search', component: index_3.AbilitySearchComponent },
+    { path: 'all-packs', component: index_2.AllPacksComponent, data: { title: 'Pack List' } },
     { path: 'packs', component: index_1.PacksComponent, data: { title: 'Pack List' } },
     { path: '', redirectTo: '/packs', pathMatch: 'full' },
     { path: '**', component: not_found_component_1.PageNotFoundComponent }
@@ -46,13 +48,14 @@ AppModule = __decorate([
             app_component_1.AppComponent,
             index_1.PackComponent,
             index_1.PacksComponent,
-            index_3.CharacterComponent,
-            index_2.AbilitySearchComponent,
+            index_2.AllPacksComponent,
+            index_4.CharacterComponent,
+            index_3.AbilitySearchComponent,
             not_found_component_1.PageNotFoundComponent,
-            index_4.SearchBox,
-            index_5.SearchPipe,
-            index_5.SearchPackNamePipe,
-            index_5.SearchAbilityNamePipe
+            index_5.SearchBox,
+            index_6.SearchPipe,
+            index_6.SearchPackNamePipe,
+            index_6.SearchAbilityNamePipe
         ],
         providers: [cookies_service_1.CookieService],
         bootstrap: [app_component_1.AppComponent],
