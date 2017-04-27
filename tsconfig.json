@@ -8,6 +8,16 @@
     "experimentalDecorators": true,
     "lib": [ "es2015", "dom" ],
     "noImplicitAny": false,
-    "suppressImplicitAnyIndexErrors": true
-  }
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "baseUrl": "./src",
+    "suppressImplicitAnyIndexErrors": true,
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
+  },
+  "exclude":[
+    "node_modules",
+    "dist"
+  ]
 }

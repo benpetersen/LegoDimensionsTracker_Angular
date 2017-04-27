@@ -7,31 +7,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var SearchPipe = (function () {
-    function SearchPipe() {
+var SearchPackNamePipe = (function () {
+    function SearchPackNamePipe() {
     }
-    SearchPipe.prototype.transform = function (data, searchAbilityName) {
+    SearchPackNamePipe.prototype.transform = function (data, searchCriteria) {
         var items = new Array();
-        if (searchAbilityName) {
-            searchAbilityName = searchAbilityName.toLowerCase();
-            data.forEach(function (item) {
-                item.characters.forEach(function (character) {
-                    character.abilities.forEach(function (ability) {
-                        if (ability.toLowerCase().indexOf(searchAbilityName) !== -1) {
-                            items.push(character);
-                        }
-                    });
-                });
+        if (searchCriteria) {
+            searchCriteria = searchCriteria.toLowerCase();
+            data.forEach(function (pack) {
+                if (pack.packName.toLowerCase().indexOf(searchCriteria) !== -1) {
+                    items.push(pack);
+                }
             });
         }
         return items;
     };
-    return SearchPipe;
+    return SearchPackNamePipe;
 }());
-SearchPipe = __decorate([
+SearchPackNamePipe = __decorate([
     core_1.Pipe({
-        name: "search"
+        name: "searchPackName"
     })
-], SearchPipe);
-exports.SearchPipe = SearchPipe;
-//# sourceMappingURL=search.pipe.js.map
+], SearchPackNamePipe);
+exports.SearchPackNamePipe = SearchPackNamePipe;
+//# sourceMappingURL=searchPackName.pipe.js.map

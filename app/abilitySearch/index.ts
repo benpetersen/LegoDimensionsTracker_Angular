@@ -1,0 +1,1 @@
+export {AbilitySearchComponent} from './abilitySearch.component';

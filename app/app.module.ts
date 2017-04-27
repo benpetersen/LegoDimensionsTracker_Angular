@@ -5,12 +5,27 @@ import { HttpModule, Response } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
 
-import {PacksComponent, PackComponent, SearchPipe, SearchPackNamePipe} from './pack/index';
+import {PacksComponent, PackComponent} from './pack/index';
+import {AbilityService, PackService} from './services/index';
+import {AbilitySearchComponent} from './abilitySearch/index';
+import {PageNotFoundComponent} from './not-found.component';
 import {CharacterComponent} from './character/index';
 import {SearchBox} from './common/index';
+import {SearchPipe} from './pipes/search.pipe';
+import {SearchPackNamePipe} from './pipes/searchPackName.pipe';
+import {SearchAbilityNamePipe} from './pipes/searchAbilityName.pipe';
 
 let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
+
+const appRoutes: Routes = [
+  { path: 'ability-search', component: AbilitySearchComponent },
+  { path: 'packs', component: PacksComponent, data: { title: 'Pack List' }},
+  { path: '', redirectTo: '/packs', pathMatch: 'full'},
+  { path: '**', component: PageNotFoundComponent }
+];
+
 
 @NgModule({
   imports:      [ 
@@ -18,18 +33,22 @@ let schemas: any[] = [CUSTOM_ELEMENTS_SCHEMA];
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     AppComponent,
     PackComponent,
     PacksComponent,
     CharacterComponent,
+    AbilitySearchComponent,
+    PageNotFoundComponent,
+    SearchBox,
     SearchPipe,
     SearchPackNamePipe,
-    SearchBox
+    SearchAbilityNamePipe
   ],
-  providers: [ CookieService ],
+  providers: [ CookieService],
   bootstrap:  [ AppComponent ],
   schemas: schemas,
 })

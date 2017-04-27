@@ -1,7 +1,5 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./character.component"));
+var character_component_1 = require("./character.component");
+exports.CharacterComponent = character_component_1.CharacterComponent;
 //# sourceMappingURL=index.js.map

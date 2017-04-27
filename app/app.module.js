@@ -13,10 +13,22 @@ var http_1 = require("@angular/http");
 var ng_bootstrap_1 = require("@ng-bootstrap/ng-bootstrap");
 var cookies_service_1 = require("angular2-cookie/services/cookies.service");
 var app_component_1 = require("./app.component");
+var router_1 = require("@angular/router");
 var index_1 = require("./pack/index");
-var index_2 = require("./character/index");
-var index_3 = require("./common/index");
+var index_2 = require("./abilitySearch/index");
+var not_found_component_1 = require("./not-found.component");
+var index_3 = require("./character/index");
+var index_4 = require("./common/index");
+var search_pipe_1 = require("./pipes/search.pipe");
+var searchPackName_pipe_1 = require("./pipes/searchPackName.pipe");
+var searchAbilityName_pipe_1 = require("./pipes/searchAbilityName.pipe");
 var schemas = [core_1.CUSTOM_ELEMENTS_SCHEMA];
+var appRoutes = [
+    { path: 'ability-search', component: index_2.AbilitySearchComponent },
+    { path: 'packs', component: index_1.PacksComponent, data: { title: 'Pack List' } },
+    { path: '', redirectTo: '/packs', pathMatch: 'full' },
+    { path: '**', component: not_found_component_1.PageNotFoundComponent }
+];
 var AppModule = (function () {
     function AppModule() {
     }
@@ -29,16 +41,20 @@ AppModule = __decorate([
             forms_1.FormsModule,
             forms_1.ReactiveFormsModule,
             http_1.HttpModule,
-            ng_bootstrap_1.NgbModule.forRoot()
+            ng_bootstrap_1.NgbModule.forRoot(),
+            router_1.RouterModule.forRoot(appRoutes)
         ],
         declarations: [
             app_component_1.AppComponent,
             index_1.PackComponent,
             index_1.PacksComponent,
-            index_2.CharacterComponent,
-            index_1.SearchPipe,
-            index_1.SearchPackNamePipe,
-            index_3.SearchBox
+            index_3.CharacterComponent,
+            index_2.AbilitySearchComponent,
+            not_found_component_1.PageNotFoundComponent,
+            index_4.SearchBox,
+            search_pipe_1.SearchPipe,
+            searchPackName_pipe_1.SearchPackNamePipe,
+            searchAbilityName_pipe_1.SearchAbilityNamePipe
         ],
         providers: [cookies_service_1.CookieService],
         bootstrap: [app_component_1.AppComponent],

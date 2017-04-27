@@ -20,8 +20,7 @@
 		<button (click)="removePack(pack)" >Remove Pack from Owned list</button>
 	</tr>
 </table>
-
-<p>Abilities needed for completion</p>
+ <p>Abilities needed for completion</p>
 <table>
 	<tr *ngFor="let ability of neededAbilities">
 			<td>{{ability.CharacterAbilityName}}</td>
@@ -31,13 +30,7 @@
 	</tr>
 </table>
 
-<p>Search characters for {{searchAbilityName || "-blank-"}} abilities</p>
-<search-box (update)="searchAbilityName = $event">Character Abilities</search-box>
-<table>
-	<tr *ngFor="let character of (packs | search: searchAbilityName)">
-		<td>{{character.name}}</td>
-	</tr>
-</table>
+
 
 <br/>
 <p>List of packs, characters and abilities</p>

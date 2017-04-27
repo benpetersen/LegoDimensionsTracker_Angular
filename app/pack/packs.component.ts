@@ -2,10 +2,11 @@ import { Component, Input, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { CookieService } from 'angular2-cookie/core';
 
-import {PackService} from './services/pack.service';
-import {AbilityService} from './services/ability.service';
-import {SearchPipe} from './pipes/search.pipe';
-import {SearchPackNamePipe} from './pipes/searchPackName.pipe';
+import {PackService} from '../services/pack.service';
+import {AbilityService} from '../services/ability.service';
+import {SearchPipe} from '../pipes/search.pipe';
+import {SearchPackNamePipe} from '../pipes/searchPackName.pipe';
+import {SearchAbilityNamePipe} from '../pipes/searchAbilityName.pipe';
 
 @Component({
 	selector: 'app-packs', //<app-packs>

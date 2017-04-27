@@ -1,7 +1,5 @@
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(require("./search-box"));
+var search_box_1 = require("./search-box");
+exports.SearchBox = search_box_1.SearchBox;
 //# sourceMappingURL=index.js.map

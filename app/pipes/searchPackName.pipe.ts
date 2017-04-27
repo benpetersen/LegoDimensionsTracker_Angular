@@ -4,12 +4,12 @@ import {Pipe, PipeTransform} from '@angular/core';
 	name: "searchPackName"
 })
 export class SearchPackNamePipe implements PipeTransform{
-	transform(data: any[], searchTermPackName: string){
+	transform(data: any[], searchCriteria: string){
 		var items = new Array();
-		if(searchTermPackName){
-			searchTermPackName = searchTermPackName.toLowerCase();
+		if(searchCriteria){
+			searchCriteria = searchCriteria.toLowerCase();
 			data.forEach(function(pack: any){
-				if(pack.packName.toLowerCase().indexOf(searchTermPackName) !== -1){
+				if(pack.packName.toLowerCase().indexOf(searchCriteria) !== -1){
 					items.push(pack);
 				}
 			})

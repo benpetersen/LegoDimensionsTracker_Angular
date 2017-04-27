@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var core_2 = require("angular2-cookie/core");
-var pack_service_1 = require("./services/pack.service");
-var ability_service_1 = require("./services/ability.service");
+var pack_service_1 = require("../services/pack.service");
+var ability_service_1 = require("../services/ability.service");
 var PacksComponent = (function () {
     function PacksComponent(_packsService, _abilitiesService, _cookieService) {
         this._packsService = _packsService;
